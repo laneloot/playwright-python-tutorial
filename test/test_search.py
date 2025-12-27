@@ -2,10 +2,11 @@ from pages.result import DuckDuckGoResultPage
 from pages.search import DuckDuckGoSearchPage
 from playwright.sync_api import expect, Page
 
-def test_basic_duckduckgo_search(page: Page) -> None:
-    search_page = DuckDuckGoSearchPage(page)
-    result_page = DuckDuckGoResultPage(page)
-
+def test_basic_duckduckgo_search(
+    page: Page,
+    search_page: DuckDuckGoSearchPage,
+    result_page: DuckDuckGoResultPage) -> None:
+    
     # Given the DuckDuckGo home page is displayed
     search_page.load()
 
